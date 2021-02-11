@@ -14,18 +14,12 @@ const App = () => {
     <div className="app-wrapper">
       <Header />
       <Navbar />
-      <div class="app-wrapper-content">
-        {/* <Dialogs/> */}
-
-        {/* <Profile /> */}
+      <div class="app-wrapper-content">  
         <Route path="/dialogs"><Dialogs/></Route>
         <Route path="/profile"><Profile/></Route>
         <Route path="/news"><News/></Route>
         <Route path="/music"><Music/></Route>
         <Route path="/settings"><Settings/></Route>
-        
-
-
       </div>
     </div>
     </Router>

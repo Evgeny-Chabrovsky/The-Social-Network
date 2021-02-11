@@ -3,9 +3,10 @@
   background-color: peru;
 }
 
-.item {
+.item a {
   color: white;
+  text-decoration: none;
 }
-.item.active {
+.item .active {
   color: gold;
 }
