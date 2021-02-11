@@ -1,12 +1,11 @@
 import MyPosts from "./MyPosts/MyPosts";
-import style from "./Profile.module.css";
 
 const Profile = () => {
   return (
-    <div className={style.content}>
+    <div>
       <div>
         <img
-          src="https://www.farmersalmanac.com/wp-content/uploads/2020/11/sunrise.jpg"
+          src="https://www.farmersalmanac.com/wp-content/uploads/2020/11/sunrise.jpg" alt=" "
           width="800px"
         ></img>
       </div>
