@@ -3,36 +3,17 @@ import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Dialogs.module.css";
 
-let dialogsData = [
-  { id: 1, name: "Dimych" },
-  { id: 2, name: "Andrey" },
-  { id: 3, name: "Sveta" },
-  { id: 4, name: "Sasha" },
-  { id: 5, name: "Viktor" },
-  { id: 6, name: "Valera" },
-  { id: 7, name: "Olga" },
-];
-
-let messageData = [
-  { id: 1, message: "куку" },
-  { id: 2, message: "Hi, I'm your second message!" },
-  { id: 3, message: "Hi, I'm your third message!" },
-  { id: 4, message: "Hi, Hi,!" },
-  { id: 5, message: "Hi, Yo!" },
-  { id: 6, message: "Yo!" },
-];
-
 const Dialogs = (props) => {
   return (
     <div className={style.dialogs}>
       <div className={style.dialogsItems}>
-        {dialogsData.map((d) => (
+        {props.dialogs.map((d) => (
           <DialogItem id={d.id} name={d.name} key={d.id} />
         ))}
       </div>
 
       <div className={style.messages}>
-        {messageData.map((m) => (
+        {props.messages.map((m) => (
           <MessageItem id={m.id} message={m.message} key={m.id} />
         ))}
       </div>
