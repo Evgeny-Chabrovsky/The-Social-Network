@@ -2,6 +2,7 @@ import React from "react";
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
 import style from "./Dialogs.module.css";
+import TextAreaDialog from "./TextAreaDialog";
 
 const Dialogs = (props) => {
   return (
@@ -16,6 +17,9 @@ const Dialogs = (props) => {
         {props.messages.map((m) => (
           <MessageItem id={m.id} message={m.message} key={m.id} />
         ))}
+        <div>
+          <TextAreaDialog />
+        </div>
       </div>
     </div>
   );

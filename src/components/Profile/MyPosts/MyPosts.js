@@ -1,23 +1,38 @@
+import React from "react";
 import style from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
-const MyPosts = () => {
-  let postsData = [
-    { id: 1, post: "It's my first post", likeCount: 15 },
-    { id: 2, post: "Всем привет", likeCount: 1 },
-    { id: 3, post: "Плохой день", likeCount: 50 },
-    { id: 4, post: "Удача!!!", likeCount: 100 },
-  ];
+const MyPosts = (props) => {
+  let newPostElement = React.createRef();
+  let showPost = () => {
+    let text = newPostElement.current.value;
+    alert(text);
+  };
 
-  let postItem = postsData.map((p) => (
-    <Post key={p.id} id={p.id} post={p.post} likeCount={p.likeCount} />
-  ));
   return (
     <div className={style.content}>
       <h2>My posts:</h2>
-      <textarea></textarea>
-      <button>Add post</button>
-      {postItem}
+
+      <div className="form-floating w-50 ">
+        <textarea
+          ref={newPostElement}
+          className="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea"
+        ></textarea>
+        <label for="floatingTextarea">My post</label>
+      </div>
+      <button
+        className="btn btn-primary mt-2 mb-2"
+        type="submit"
+        onClick={() => showPost()}
+      >
+        Add post
+      </button>
+
+      {props.posts.map((p) => (
+        <Post key={p.id} id={p.id} post={p.post} likeCount={p.likeCount} />
+      ))}
     </div>
   );
 };

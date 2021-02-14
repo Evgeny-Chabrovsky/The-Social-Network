@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { getMessages } from "./components/services/data";
-import { getDialogs } from "./components/services/data";
+import { getMessages, getDialogs, getPosts } from "./components/services/data";
+
 import "./App.css";
 import Dialogs from "./components/Dialogs/Dialogs";
 import Header from "./components/Header/Header";
@@ -15,6 +15,7 @@ class App extends Component {
   state = {
     dialogs: getDialogs(),
     messages: getMessages(),
+    posts: getPosts(),
   };
 
   render() {
@@ -32,7 +33,7 @@ class App extends Component {
               />
             </Route>
             <Route path="/profile">
-              <Profile />
+              <Profile posts={this.state.posts} />
             </Route>
             <Route path="/news">
               <News />
