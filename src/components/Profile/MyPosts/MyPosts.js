@@ -4,11 +4,11 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
   let newPostElement = React.createRef();
-  let showPost = () => {
+  let addPost = () => {
     let text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
   };
-
+  debugger;
   return (
     <div className={style.content}>
       <h2>My posts:</h2>
@@ -25,7 +25,7 @@ const MyPosts = (props) => {
       <button
         className="btn btn-primary mt-2 mb-2"
         type="submit"
-        onClick={() => showPost()}
+        onClick={() => addPost()}
       >
         Add post
       </button>

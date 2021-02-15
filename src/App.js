@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { getMessages, getDialogs, getPosts } from "./components/services/data";
+// import { getMessages, getDialogs, getPosts } from "./components/services/data";
 
 import "./App.css";
 import Dialogs from "./components/Dialogs/Dialogs";
@@ -12,28 +12,24 @@ import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
 
 class App extends Component {
-  state = {
-    dialogs: getDialogs(),
-    messages: getMessages(),
-    posts: getPosts(),
-  };
-
   render() {
-    console.log(this.state);
     return (
       <Router>
         <div className="app-wrapper">
           <Header />
           <Navbar />
-          <div class="app-wrapper-content">
+          <div className="app-wrapper-content">
             <Route path="/dialogs">
               <Dialogs
-                dialogs={this.state.dialogs}
-                messages={this.state.messages}
+                dialogs={this.props.state.dialogsData}
+                messages={this.props.state.messagesData}
               />
             </Route>
             <Route path="/profile">
-              <Profile posts={this.state.posts} />
+              <Profile
+                posts={this.props.state.postsData}
+                addPost={this.props.addPost}
+              />
             </Route>
             <Route path="/news">
               <News />
