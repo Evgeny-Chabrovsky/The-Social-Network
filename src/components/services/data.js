@@ -1,5 +1,6 @@
-import { rerenderEntireTree } from "./../../render";
-
+let getRerender = () => {
+  console.log("State was changed");
+};
 export let state = {
   dialogsData: [
     { id: 1, name: "Dimych" },
@@ -29,12 +30,12 @@ export let state = {
 };
 export default state;
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
   state.newPostText = newText;
-  rerenderEntireTree(state);
+  getRerender(state);
 };
 
-export let addPost = () => {
+export const addPost = () => {
   let newPost = {
     id: state.postsData.length + 1,
     post: state.newPostText,
@@ -42,5 +43,9 @@ export let addPost = () => {
   };
   state.postsData.push(newPost);
   state.newPostText = "";
-  rerenderEntireTree(state);
+  getRerender(state);
+};
+
+export const subscribe = (observer) => {
+  getRerender = observer; //паттерн observer(наблюдатель)
 };
