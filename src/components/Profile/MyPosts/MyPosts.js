@@ -5,10 +5,13 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
   let newPostElement = React.createRef();
   let addPost = () => {
-    let text = newPostElement.current.value;
-    props.addPost(text);
+    props.addPost();
   };
-  debugger;
+
+  let onPostChange = () => {
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  };
   return (
     <div className={style.content}>
       <h2>My posts:</h2>
@@ -16,16 +19,18 @@ const MyPosts = (props) => {
       <div className="form-floating w-50 ">
         <textarea
           ref={newPostElement}
+          value={props.newPostText}
+          onChange={onPostChange}
           className="form-control"
           placeholder="Leave a comment here"
           id="floatingTextarea"
-        ></textarea>
-        <label for="floatingTextarea">My post</label>
+        />
+        <label for="floatingTextarea"></label>
       </div>
       <button
         className="btn btn-primary mt-2 mb-2"
         type="submit"
-        onClick={() => addPost()}
+        onClick={addPost}
       >
         Add post
       </button>

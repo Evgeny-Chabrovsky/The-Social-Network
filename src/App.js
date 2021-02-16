@@ -21,14 +21,16 @@ class App extends Component {
           <div className="app-wrapper-content">
             <Route path="/dialogs">
               <Dialogs
-                dialogs={this.props.state.dialogsData}
-                messages={this.props.state.messagesData}
+                dialogs={this.props.profilePage.dialogsData}
+                messages={this.props.profilePage.messagesData}
               />
             </Route>
             <Route path="/profile">
               <Profile
-                posts={this.props.state.postsData}
+                posts={this.props.profilePage.postsData}
+                newPostText={this.props.profilePage.newPostText}
                 addPost={this.props.addPost}
+                updateNewPostText={this.props.updateNewPostText}
               />
             </Route>
             <Route path="/news">

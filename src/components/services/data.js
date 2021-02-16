@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "./../../render";
+
 export let state = {
   dialogsData: [
     { id: 1, name: "Dimych" },
@@ -21,26 +23,24 @@ export let state = {
     { id: 2, post: "Всем привет", likeCount: 1 },
     { id: 3, post: "Плохой день", likeCount: 50 },
     { id: 4, post: "Удача!!!", likeCount: 100 },
-    { id: 4, post: "Ура все получилось. Это новый пост!!", likeCount: 1000000 },
+    { id: 5, post: "Ура все получилось. Это новый пост!!", likeCount: 1000000 },
   ],
+  newPostText: "it-camasutra.com",
 };
 export default state;
-// export function getDialogs() {
-//   return state.dialogsData;
-// }
 
-// export function getMessages() {
-//   return state.messageData;
-// }
+export let updateNewPostText = (newText) => {
+  state.newPostText = newText;
+  rerenderEntireTree(state);
+};
 
-// export function getPosts() {
-//   return state.postsData;
-// }
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: state.postsData.length + 1,
-    post: postMessage,
+    post: state.newPostText,
     likeCount: 0,
   };
   state.postsData.push(newPost);
+  state.newPostText = "";
+  rerenderEntireTree(state);
 };
