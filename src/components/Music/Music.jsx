@@ -1,5 +1,6 @@
+import style from "./Music.module.css";
 const Music = () => {
-  return <div>Music</div>;
+  return <h1>Music</h1>;
 };
 
 export default Music;

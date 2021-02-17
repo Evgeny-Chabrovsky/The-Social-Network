@@ -27,8 +27,7 @@ class App extends Component {
               <Profile
                 posts={this.props.state.postsData}
                 newPostText={this.props.state.newPostText}
-                addPost={this.props.addPost}
-                updateNewPostText={this.props.updateNewPostText}
+                dispatch={this.props.dispatch}
               />
             </Route>
             <Route path="/news">

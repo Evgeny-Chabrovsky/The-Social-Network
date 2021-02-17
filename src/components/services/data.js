@@ -30,6 +30,22 @@ let store = {
     ],
     newPostText: "it-camasutra.com",
   },
+
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: this._state.postsData.length + 1,
+        post: this._state.newPostText,
+        likeCount: 0,
+      };
+      this._state.postsData.push(newPost);
+      this._state.newPostText = "";
+      this._callSubscriber(store._state);
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.newPostText = action.newText;
+      this._callSubscriber(store._state);
+    }
+  },
   getState() {
     return this._state;
   },
@@ -37,21 +53,21 @@ let store = {
     console.log("State was changed");
   },
 
-  updateNewPostText(newText) {
-    this._state.newPostText = newText;
-    this._callSubscriber(store._state);
-  },
+  // updateNewPostText(newText) {
+  //   this._state.newPostText = newText;
+  //   this._callSubscriber(store._state);
+  // },
 
-  addPost() {
-    let newPost = {
-      id: this._state.postsData.length + 1,
-      post: this._state.newPostText,
-      likeCount: 0,
-    };
-    this._state.postsData.push(newPost);
-    this._state.newPostText = "";
-    this._callSubscriber(store._state);
-  },
+  // addPost() {
+  //   let newPost = {
+  //     id: this._state.postsData.length + 1,
+  //     post: this._state.newPostText,
+  //     likeCount: 0,
+  //   };
+  //   this._state.postsData.push(newPost);
+  //   this._state.newPostText = "";
+  //   this._callSubscriber(store._state);
+  // },
 
   subscribe(observer) {
     this._callSubscriber = observer; //паттерн observer(наблюдатель)
