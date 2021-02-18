@@ -11,6 +11,7 @@ import Settings from "./components/Settings/Settings";
 
 class App extends Component {
   render() {
+    debugger;
     return (
       <Router>
         <div className="app-wrapper">
@@ -21,6 +22,8 @@ class App extends Component {
               <Dialogs
                 dialogs={this.props.state.dialogsData}
                 messages={this.props.state.messagesData}
+                newMessageText={this.props.state.newMessageText}
+                dispatch={this.props.dispatch}
               />
             </Route>
             <Route path="/profile">
