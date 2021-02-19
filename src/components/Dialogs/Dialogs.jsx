@@ -5,9 +5,10 @@ import style from "./Dialogs.module.css";
 import {
   addMessageActionCreator,
   updateNewMessageTextActionCreator,
-} from "./../services/data";
+} from "./../services/dialogs-reducer";
 
 const Dialogs = (props) => {
+  // debugger;
   let newMessageElement = React.createRef();
 
   let addMessage = () => {

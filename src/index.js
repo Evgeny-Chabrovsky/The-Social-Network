@@ -7,7 +7,6 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 
 let getRerender = (state) => {
-  debugger;
   ReactDOM.render(
     <React.StrictMode>
       <App state={state} dispatch={state.dispatch.bind(store)} />

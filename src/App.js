@@ -9,44 +9,41 @@ import News from "./components/News/News";
 import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
 
-class App extends Component {
-  render() {
-    debugger;
-    return (
-      <Router>
-        <div className="app-wrapper">
-          <Header />
-          <Navbar />
-          <div className="app-wrapper-content">
-            <Route path="/dialogs">
-              <Dialogs
-                dialogs={this.props.state.dialogsPage.dialogsData}
-                messages={this.props.state.dialogsPage.messagesData}
-                newMessageText={this.props.state.dialogsPage.newMessageText}
-                dispatch={this.props.dispatch}
-              />
-            </Route>
-            <Route path="/profile">
-              <Profile
-                posts={this.props.state.profilePage.postsData}
-                newPostText={this.props.state.profilePage.newPostText}
-                dispatch={this.props.dispatch}
-              />
-            </Route>
-            <Route path="/news">
-              <News />
-            </Route>
-            <Route path="/music">
-              <Music />
-            </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
-          </div>
+const App = (props) => {
+  return (
+    <Router>
+      <div className="app-wrapper">
+        <Header />
+        <Navbar />
+        <div className="app-wrapper-content">
+          <Route path="/dialogs">
+            <Dialogs
+              dialogs={props.state.dialogsPage.dialogsData}
+              messages={props.state.dialogsPage.messagesData}
+              newMessageText={props.state.dialogsPage.newMessageText}
+              dispatch={props.dispatch}
+            />
+          </Route>
+          <Route path="/profile">
+            <Profile
+              posts={props.state.profilePage.postsData}
+              newPostText={props.state.profilePage.newPostText}
+              dispatch={props.dispatch}
+            />
+          </Route>
+          <Route path="/news">
+            <News />
+          </Route>
+          <Route path="/music">
+            <Music />
+          </Route>
+          <Route path="/settings">
+            <Settings />
+          </Route>
         </div>
-      </Router>
-    );
-  }
-}
+      </div>
+    </Router>
+  );
+};
 
 export default App;

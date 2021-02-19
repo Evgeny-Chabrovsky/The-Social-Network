@@ -4,10 +4,10 @@ import Post from "./Post/Post";
 import {
   addPostActionCreator,
   updateNewPostTextActionCreator,
-} from "./../../services/data";
+} from "./../../services/profile-reducer";
 
 const MyPosts = (props) => {
-  debugger;
+  // debugger;
   let newPostElement = React.createRef();
 
   let addPost = () => {
