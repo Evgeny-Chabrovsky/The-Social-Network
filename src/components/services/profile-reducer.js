@@ -2,7 +2,7 @@ const ADD_POST = "ADD-POST",
   UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 
 let initialState = {
-  newPostText: "it-camasutra.com",
+  newPostText: "Lorus",
   postsData: [
     { id: 1, post: "It's my first post", likeCount: 15 },
     { id: 2, post: "Всем привет", likeCount: 1 },

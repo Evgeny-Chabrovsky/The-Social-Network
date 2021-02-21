@@ -10,7 +10,7 @@ let getRerender = (state) => {
   debugger;
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} dispatch={store.dispatch.bind(store)} />
+      <App store={store} dispatch={store.dispatch.bind(store)} state={state} />
     </React.StrictMode>,
     document.getElementById("root")
   );

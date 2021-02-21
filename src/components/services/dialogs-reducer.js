@@ -2,7 +2,7 @@ const ADD_MESSAGE = "ADD-MESSAGE",
   UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
 let initialState = {
-  newMessageText: "YO-YO-YO",
+  newMessageText: "Lorus",
   messagesData: [
     { id: 1, message: "куку" },
     { id: 2, message: "Hi, I'm your second message!" },
