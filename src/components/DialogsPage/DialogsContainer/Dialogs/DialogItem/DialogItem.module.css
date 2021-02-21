@@ -1,0 +1,9 @@
+.color {
+  color: pink;
+}
+.dialogsItems {
+}
+
+.dialogsItems .active {
+  color: chartreuse;
+}

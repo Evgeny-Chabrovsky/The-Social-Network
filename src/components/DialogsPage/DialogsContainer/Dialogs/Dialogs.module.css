@@ -1,0 +1,21 @@
+.color {
+  color: pink;
+}
+
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems .active {
+  color: cyan;
+}
+
+/* .Button { */
+/* composes: button btn btn-primary mt-2 mb-2 from global; */
+/* background: red; */
+/* } */
+
+/* .Button:hover { */
+/* background: red; */
+/* } */
