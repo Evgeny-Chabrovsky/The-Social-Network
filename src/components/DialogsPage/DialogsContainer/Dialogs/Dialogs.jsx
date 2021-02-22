@@ -24,13 +24,13 @@ const Dialogs = (props) => {
   return (
     <div className={style.dialogs}>
       <div className={style.dialogsItems}>
-        {props.dialogs.map((d) => (
+        {props.dialogsPage.dialogsData.map((d) => (
           <DialogItem id={d.id} name={d.name} key={d.id} />
         ))}
       </div>
 
       <div className={style.messages}>
-        {props.messages.map((m) => (
+        {props.dialogsPage.messagesData.map((m) => (
           <MessageItem id={m.id} message={m.message} key={m.id} />
         ))}
         <div>
@@ -39,7 +39,7 @@ const Dialogs = (props) => {
             <div className="form-floating w-75 pt-2">
               <textarea
                 ref={newMessageElement}
-                value={props.newMessageText}
+                value={props.dialogsPage.newMessageText}
                 onChange={onMessageChange}
                 className="form-control"
                 placeholder="Leave a comment here"

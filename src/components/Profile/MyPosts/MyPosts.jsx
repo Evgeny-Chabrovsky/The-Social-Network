@@ -3,7 +3,7 @@ import style from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-  // debugger;
+  debugger;
   let newPostElement = React.createRef();
 
   let onAddPost = () => {
@@ -12,6 +12,7 @@ const MyPosts = (props) => {
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
+    console.log(text);
     props.updateNewPostText(text);
   };
 
@@ -22,7 +23,7 @@ const MyPosts = (props) => {
       <div className="form-floating w-50 ">
         <textarea
           ref={newPostElement}
-          value={props.newPostText}
+          value={props.profilePage.newPostText}
           onChange={onPostChange} //+
           className="form-control"
           placeholder="Leave a comment here"
@@ -38,7 +39,7 @@ const MyPosts = (props) => {
         Add post
       </button>
 
-      {props.posts.map((p) => (
+      {props.profilePage.postsData.map((p) => (
         <Post key={p.id} id={p.id} post={p.post} likeCount={p.likeCount} />
       ))}
     </div>

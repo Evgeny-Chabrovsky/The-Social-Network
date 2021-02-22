@@ -5,23 +5,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
+import { Provider } from "react-redux";
 
-let getRerender = (state) => {
-  debugger;
-  ReactDOM.render(
-    <React.StrictMode>
-      <App store={store} dispatch={store.dispatch.bind(store)} state={state} />
-    </React.StrictMode>,
-    document.getElementById("root")
-  );
-};
+debugger;
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 reportWebVitals();
-getRerender(store.getState());
-store.subscribe(() => {
-  // если так ек сделать,
-  let state = store.getState(); // то state в index.js
-  getRerender(state); // вернет undefine
-});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
