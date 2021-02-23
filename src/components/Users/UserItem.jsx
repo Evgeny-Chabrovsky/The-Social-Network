@@ -7,7 +7,11 @@ const UserItem = (props) => {
         <div className="col-md-3">
           <img
             className=" mx-auto d-block"
-            src={props.img}
+            src={
+              props.photos == null
+                ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppkoKsaYMuIoNLDH7O8ePOacLPG1mKXtEng&usqp=CAU"
+                : props.photos
+            }
             width="150px"
             alt=""
           />
@@ -43,11 +47,11 @@ const UserItem = (props) => {
 
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{props.fullName}</h5>
+            <h5 className="card-title">{props.name}</h5>
             <p className="card-text">{props.status}</p>
             <p className="card-text">
               <small className="text-muted">
-                {props.location.city} {props.location.country}
+                {"props.location.city} {props.location.country"}
               </small>
             </p>
           </div>
