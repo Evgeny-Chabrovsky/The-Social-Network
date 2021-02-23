@@ -1,7 +1,6 @@
 import style from "./Post.module.css";
 
 const Post = (props) => {
-  debugger;
   return (
     <div className={style.post}>
       <img

@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import DialogsContainer from "./components/DialogsPage/DialogsContainer/DialogsContainer";
 import Header from "./components/Header/Header";
-import Music from "./components/Music/Music";
+// import Music from "./components/Music/Music";
 import Navbar from "./components/Navbar/Navbar";
-import News from "./components/News/News";
+// import News from "./components/News/News";
 import Profile from "./components/Profile/Profile";
-import Settings from "./components/Settings/Settings";
+import UsersContainer from "./components/Users/UsersContainer";
+// import Settings from "./components/Settings/Settings";
 
 const App = (props) => {
-  debugger;
   return (
     <Router>
       <div className="app-wrapper">
@@ -23,7 +23,10 @@ const App = (props) => {
           <Route path="/profile">
             <Profile store={props.store} />
           </Route>
-          <Route path="/news">
+          <Route path="/users">
+            <UsersContainer />
+          </Route>
+          {/* <Route path="/news">
             <News />
           </Route>
           <Route path="/music">
@@ -31,7 +34,7 @@ const App = (props) => {
           </Route>
           <Route path="/settings">
             <Settings />
-          </Route>
+          </Route> */}
         </div>
       </div>
     </Router>

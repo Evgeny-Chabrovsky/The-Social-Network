@@ -20,7 +20,6 @@ const Dialogs = (props) => {
     props.updateNewMessageText(text);
   };
 
-  debugger;
   return (
     <div className={style.dialogs}>
       <div className={style.dialogsItems}>
